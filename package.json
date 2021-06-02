@@ -1,0 +1,13 @@
+{
+  "name": "tmx-mars",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "jest": "^27.0.3",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  },
+  "scripts": {
+    "test": "jest --watch --coverage",
+    "build": "webpack -w"
+  }
+}
