@@ -22,18 +22,18 @@ buttonResearch.addEventListener('click', e => {
     requestName
         .then((a:any): any => {
             let arr: string[] = 
-            [
+            [ 
                 a.name,
                 a.gender,
                 a.probability,
                 a.count
             ]
 
-            console.log(arr)
-
-            resultResearch.forEach((el, idx) => {
-                el.textContent = arr[idx]
-            })
+            setTimeout(() => {
+                resultResearch.forEach((el, idx) => {
+                    el.textContent = arr[idx]
+                })
+            }, 3000);
 
         })
 })

@@ -16,9 +16,10 @@ buttonResearch.addEventListener('click', function (e) {
             a.probability,
             a.count
         ];
-        console.log(arr);
-        resultResearch.forEach(function (el, idx) {
-            el.textContent = arr[idx];
-        });
+        setTimeout(function () {
+            resultResearch.forEach(function (el, idx) {
+                el.textContent = arr[idx];
+            });
+        }, 3000);
     });
 });
