@@ -1,20 +1,17 @@
 declare var require: any;
 const api: any = require('./api')
-
-const inputName = 
-    document.querySelector('.inputName') as HTMLInputElement;
-
-const buttonResearch = 
-    document.querySelector('.inputResearch') as HTMLButtonElement;
-
-const resultResearch = 
-    document.querySelectorAll('.result');
-
+const {
+    inputName, 
+    buttonResearch, 
+    resultResearch
+} = require('./utils')
 
 let requestName: Promise<Response>
 
-buttonResearch.addEventListener('click', e => {
+buttonResearch.addEventListener('click', (e:any) => {
     e.preventDefault();
+    for( let item of resultResearch) item.textContent = ''
+    resultResearch[0].textContent = `Waiting research...`
 
     requestName = api.api.get(`?name=${inputName.value}`)
         .then((e:any) => e.data)
@@ -30,10 +27,9 @@ buttonResearch.addEventListener('click', e => {
             ]
 
             setTimeout(() => {
-                resultResearch.forEach((el, idx) => {
-                    el.textContent = arr[idx]
-                })
-            }, 3000);
+                resultResearch.forEach((el:Element, idx: number) => 
+                    el.textContent = arr[idx] )
+            }, 1000);
 
         })
 })
