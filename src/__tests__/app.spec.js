@@ -10,7 +10,16 @@ describe('App test resources', () => {
         })
     })
 
-    describe('Should receive typed name via api', () => {
+    describe('Should return result avatar', () => {
+        const avatar = require('../js/avatar');
+        const mock = jest.fn('../js/avatar')
+
+        it('Should return function', () => {
+            const result = 
+                mock.mockImplementation(avatar.avatar())
+                .getMockImplementation()
+            expect(result).toBeDefined()
+        })
         
     })
 
