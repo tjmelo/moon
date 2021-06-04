@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+*/
+
 describe('App test resources', () => {
 
     describe('Promise API', () => {
@@ -21,6 +25,16 @@ describe('App test resources', () => {
             expect(result).toBeDefined()
         })
         
+    })
+
+    describe('Should to return truthy values DOM', () => {
+        const utils = require('../js/utils');
+        const options = [];
+        for(let elements of Object.keys(utils))
+            options.push(elements)
+        it('Should to return elements DOM', () => {
+            expect(options).toBeTruthy()
+        })
     })
 
 })
