@@ -1,17 +1,20 @@
 declare var require: any;
 const api: any = require('./api')
+const avatar = require('./avatar');
 const {
     inputName, 
     buttonResearch, 
-    resultResearch
+    resultResearch,
+    resultAvatar
 } = require('./utils')
 
 let requestName: Promise<Response>
 
-buttonResearch.addEventListener('click', (e:any) => {
+buttonResearch.addEventListener('click', (e:any):void => {
     e.preventDefault();
-    for( let item of resultResearch) item.textContent = ''
-    resultResearch[0].textContent = `Waiting research...`
+    for( let item of resultResearch) item.textContent = '';
+    resultAvatar.removeAttribute('src');
+    resultResearch[0].textContent = `Waiting research...`;
 
     requestName = api.api.get(`?name=${inputName.value}`)
         .then((e:any) => e.data)
@@ -22,13 +25,20 @@ buttonResearch.addEventListener('click', (e:any) => {
             [ 
                 a.name,
                 a.gender,
-                a.probability,
-                a.count
+                `${(a.probability * 100).toFixed(1)}%`,
+                a.count,
             ]
+            
+            let image: string = (a.gender === 'female') 
+                                ? `w${avatar.avatar()}`
+                                : `m${avatar.avatar()}`;
 
             setTimeout(() => {
                 resultResearch.forEach((el:Element, idx: number) => 
                     el.textContent = arr[idx] )
+                    resultAvatar.setAttribute(
+                        'src', `../public/avatar/${image}.png`
+                    );
             }, 1000);
 
         })

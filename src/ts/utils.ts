@@ -6,3 +6,6 @@ export const buttonResearch =
 
 export const resultResearch = 
     document.querySelectorAll('.result');
+
+export const resultAvatar = 
+    document.querySelector('.resultAvatar') as HTMLImageElement;
