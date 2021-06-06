@@ -8,38 +8,35 @@ const {
     resultAvatar
 } = require('./utils')
 
-let requestName: Promise<Response>
+let requestName: Promise<any>
 
-buttonResearch.addEventListener('click', (e:any):void => {
+buttonResearch.addEventListener('click', async(e:any) => {
     e.preventDefault();
     for( let item of resultResearch) item.textContent = '';
     resultAvatar.removeAttribute('src');
     resultResearch[0].textContent = `Waiting research...`;
 
-    requestName = api.api.get(`?name=${inputName.value}`)
-        .then((e:any) => e.data)
+    requestName = await api.api.get(`?name=${inputName.value}`)
+    let data = await requestName;
+    let result = await data;
+    
+    let arr: string[] = 
+    [ 
+        result.name,
+        result.gender,
+        `${(result.probresbility * 100).toFixed(1)}%`,
+        result.count,
+    ]
+    
+    let image: string = (result.gender === 'female') 
+                        ? `w${avatar.avatar()}`
+                        : `m${avatar.avatar()}`;
 
-    requestName
-        .then((a:any): any => {
-            let arr: string[] = 
-            [ 
-                a.name,
-                a.gender,
-                `${(a.probability * 100).toFixed(1)}%`,
-                a.count,
-            ]
-            
-            let image: string = (a.gender === 'female') 
-                                ? `w${avatar.avatar()}`
-                                : `m${avatar.avatar()}`;
-
-            setTimeout(() => {
-                resultResearch.forEach((el:Element, idx: number) => 
-                    el.textContent = arr[idx] )
-                    resultAvatar.setAttribute(
-                        'src', `../public/avatar/${image}.png`
-                    );
-            }, 1000);
-
-        })
+    setTimeout(() => {
+        resultResearch.forEach((el:Element, idx: number) => 
+            el.textContent = arr[idx] )
+            resultAvatar.setAttribute(
+                'src', `../public/avatar/${image}.png`
+            );
+    }, 1000);
 })
