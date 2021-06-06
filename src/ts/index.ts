@@ -39,4 +39,5 @@ buttonResearch.addEventListener('click', async(e:any) => {
                 'src', `../public/avatar/${image}.png`
             );
     }, 1000);
+    
 })
