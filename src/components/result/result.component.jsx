@@ -1,21 +1,23 @@
 import React from "react";
 import style from "./result.module.styl";
+import { useTranslation } from "react-i18next";
 
 export const Result = () => {
+  const { t } = useTranslation();
   return (
     <section>
       <div>
         <h2 className="result resultName"></h2>
         <p>
-          Probable gender:
+          {t("gender.probable")}
           <span className="result resultGender"></span>
         </p>
         <p>
-          Probable assert gender:
+          {t("gender.assert")}
           <span className="result resultProbability"></span>
         </p>
         <p>
-          Amount research:
+          {t("gender.amount")}
           <span className="result resultCount"></span>
         </p>
       </div>
