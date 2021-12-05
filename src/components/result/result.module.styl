@@ -1,0 +1,47 @@
+section
+    display flex
+    flex-flow row nowrap
+    justify-content space-between
+    margin-top 3em
+    p
+        line-height 2
+        &:before  
+            content '✪';
+            display inline-block	
+            width 20px
+            height 20px
+            display inline-flex
+            align-items center
+            justify-content center
+            color yellow
+
+figure
+    width 20em
+    height 20em
+    border-radius 50%
+    display flex
+    position relative
+    align-items center
+    justify-content center
+    &:before
+        position absolute
+        content ''
+        z-index -1
+        display block
+        width 80%
+        height 80%  
+        border-radius 50%
+        background rgba(0, 0, 0, 0.05)
+    img
+        position relative
+        z-index 10
+
+.resultName
+.resultGender
+    text-transform capitalize
+    text-decoration underline dotted yellow
+.resultGender
+.resultProbability
+.resultCount
+    line-height 1em
+    font-weight bold

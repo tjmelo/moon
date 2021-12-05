@@ -1,16 +1,43 @@
 {
   "name": "tmx-moon",
-  "dependencies": {
+  "version": "1.0.0",
+  "description": "The project about probability gender and name it consist show probability of compatibility a name be determined  equity gender with the support and amount research.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
     "axios": "^0.21.1",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "jest": "^27.0.3",
-    "stylus": "^0.54.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "style-loader": "^3.3.1",
+    "stylus": "^0.55.0",
+    "stylus-loader": "^6.2.0",
     "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.0"
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^4.6.0"
   },
   "scripts": {
+    "start": "webpack server --open --config ./config/webpack.config.js",
     "test": "jest --watch --coverage",
     "build": "webpack -w",
     "css": "stylus -w -c ./src/stylus -o ./dist/css"
   },
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjmelo/tmx-moon.git"
+  },
+  "keywords": [],
+  "author": "thiago-melo <thiago.tmwd@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tjmelo/tmx-moon/issues"
+  },
+  "homepage": "https://github.com/tjmelo/tmx-moon#readme"
 }
