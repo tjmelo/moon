@@ -10,7 +10,7 @@ const tmxMoon = {
         use: ["style-loader", "css-loader", "stylus-loader"],
       },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|tsx|ts)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -30,7 +30,7 @@ const tmxMoon = {
     hot: true,
   },
   resolve: {
-    extensions: ["", ".js", ".jsx", ".css"],
+    extensions: ["", ".js", ".jsx", ".tsx", ".ts"],
   },
   plugins: [
     new htmlWebpackPlugin({
