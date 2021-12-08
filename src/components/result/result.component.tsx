@@ -1,10 +1,9 @@
 import React from "react";
 import style from "./result.module.styl";
 import { useTranslation } from "react-i18next";
-import { type } from "os";
 
 declare interface ITypes {
-  types: any;
+  types: null | object;
 }
 
 export const Result: React.FC<ITypes> = ({ types }) => {

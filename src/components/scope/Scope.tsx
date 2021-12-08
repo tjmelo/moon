@@ -1,13 +1,11 @@
-import React, { ReactElement, useState } from "react";
+import React, { useState } from "react";
 import Result from "../result";
 import Search from "../search";
 
-declare interface IScope {}
-
-export const Scope: React.FC<IScope> = () => {
+export const Scope: React.FC = () => {
   const [name, setName] = useState<object | null>(null);
 
-  const getName = (name: () => void) => setName(name);
+  const getName = (name: () => object) => setName(name);
 
   return (
     <main className="grid">
