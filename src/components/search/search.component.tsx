@@ -4,17 +4,17 @@ import { useTranslation } from "react-i18next";
 import { genderApi } from "../../service";
 
 declare interface ISearch {
-  name: Function;
+  name: () => object;
 }
 
 export const Search: React.FC<ISearch> = ({ name }) => {
   const { t } = useTranslation();
   const valInput = useRef<HTMLInputElement | null>(null);
 
-  const research = async (e: any): Promise<void> => {
+  const research = async (e: Event) => {
     e.preventDefault();
     const { data } = await genderApi.get(`?name=${valInput.current?.value}`);
-    return name(data as Object);
+    return name(data);
   };
 
   return (
