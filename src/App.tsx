@@ -1,14 +1,15 @@
 import React from "react";
+import Scope from "./components/scope";
 import Result from "./components/result";
 import Search from "./components/search";
 import "./stylus/_theme.styl";
 
 const App = () => {
   return (
-    <main className="grid">
+    <Scope>
       <Search />
       <Result />
-    </main>
+    </Scope>
   );
 };
 
