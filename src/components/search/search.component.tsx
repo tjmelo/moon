@@ -3,16 +3,18 @@ import style from "./search.module.styl";
 import { useTranslation } from "react-i18next";
 import { genderApi } from "../../service";
 
-declare interface ISearch {}
+declare interface ISearch {
+  name: Function;
+}
 
-export const Search: React.FC<ISearch> = () => {
+export const Search: React.FC<ISearch> = ({ name }) => {
   const { t } = useTranslation();
-  const name = useRef<HTMLInputElement | null>(null);
+  const valInput = useRef<HTMLInputElement | null>(null);
 
   const research = async (e: any): Promise<void> => {
     e.preventDefault();
-    const { data } = await genderApi.get(`?name=${name.current?.value}`);
-    console.log(data);
+    const { data } = await genderApi.get(`?name=${valInput.current?.value}`);
+    return name(data as Object);
   };
 
   return (
@@ -22,7 +24,7 @@ export const Search: React.FC<ISearch> = () => {
         <input
           className="inputName"
           type="text"
-          ref={name}
+          ref={valInput}
           placeholder={t("form.placeholder")}
         />
 

@@ -1,24 +1,31 @@
 import React from "react";
 import style from "./result.module.styl";
 import { useTranslation } from "react-i18next";
+import { type } from "os";
 
-export const Result = () => {
+declare interface ITypes {
+  types: any;
+}
+
+export const Result: React.FC<ITypes> = ({ types }) => {
   const { t } = useTranslation();
   return (
     <section>
       <div>
-        <h2 className="result resultName"></h2>
+        <h2 className={style.resultName}>&nbsp;{types?.name}</h2>
         <p>
           {t("gender.probable")}
-          <span className="result resultGender"></span>
+          <span className={style.resultGender}>&nbsp;{types?.gender}</span>
         </p>
         <p>
           {t("gender.assert")}
-          <span className="result resultProbability"></span>
+          <span className={style.resultProbability}>
+            &nbsp;{types?.probability}
+          </span>
         </p>
         <p>
           {t("gender.amount")}
-          <span className="result resultCount"></span>
+          <span className={style.resultCount}>&nbsp;{types?.count}</span>
         </p>
       </div>
       <figure>
