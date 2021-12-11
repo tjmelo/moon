@@ -1,7 +1,7 @@
-name: Task for TMX Moon CI
+name: Tasks TMX Mercury runner
 on: [push, pull_request]
-
-  TMX-Moon:
+jobs:
+  TMX-Mercury:
     runs-on: ubuntu-latest
     steps:
       - run: echo "The process triggered ${{github.event_name}}"
