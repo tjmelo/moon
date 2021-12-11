@@ -3,11 +3,12 @@ import style from "./result.module.styl";
 import { useTranslation } from "react-i18next";
 
 declare interface ITypes {
-  types: null | object;
+  types: object | object;
 }
 
 export const Result: React.FC<ITypes> = ({ types }) => {
   const { t } = useTranslation();
+  const probability = types?.probability || 0;
   return (
     <section>
       <div>
@@ -19,7 +20,8 @@ export const Result: React.FC<ITypes> = ({ types }) => {
         <p>
           {t("gender.assert")}
           <span className={style.resultProbability}>
-            &nbsp;{types?.probability}
+            &nbsp;{probability * 100}
+            <em>%</em>
           </span>
         </p>
         <p>
