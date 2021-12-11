@@ -1,23 +1,24 @@
 name: Tasks TMX Moon runner
-on: [push, pull_request]
+on: [push]
 jobs:
   TMX-Moon:
     runs-on: ubuntu-latest
     strategy:
-    matrix:
-      node: ["12", "14", "16"]
+      matrix:
+        node: ["12", "14", "16"]
     steps:
-      - run: echo "The process triggered ${{ github.event_name }} event."
-      - run: echo "Server Github Host ${{ runner.os }} erver hosted by GitHub!."
-      - run: echo "The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2
         with:
           node-version: ${{ matrix.node }}
       - run: npm install
-      - run: echo "Repository cloned ${{ github.repository }} repository has been cloned to the runner."
-      - name: Quality process
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: npm run lint
-      - run: |
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
           ls ${{ github.workspace }}
-      - run: echo "Status service ${{ job.status }}."
+      - run: echo "🍏 This job's status is ${{ job.status }}."
