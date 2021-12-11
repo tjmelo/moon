@@ -1,0 +1,12 @@
+{
+  "title": "Research name identity",
+  "form": {
+    "placeholder": "Type your first name",
+    "button": "Research"
+  },
+  "gender": {
+    "probable": "Probable gender:",
+    "assert": "Probable assert gender:",
+    "amount": "Amount research:"
+  }
+}

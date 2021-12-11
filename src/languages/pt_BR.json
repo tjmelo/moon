@@ -1,0 +1,12 @@
+{
+  "title": "Pesquise pela identidade de nome",
+  "form": {
+    "placeholder": "Digite seu primeiro nome",
+    "button": "Pesquisar"
+  },
+  "gender": {
+    "probable": "Gênero provável:",
+    "assert": "Provável afirmação de gênero:",
+    "amount": "Total pesquisado:"
+  }
+}

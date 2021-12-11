@@ -1,0 +1,12 @@
+{
+  "title": "Identité du nom de recherche",
+  "form": {
+    "placeholder": "Tapez votre prénom",
+    "button": "Recherche"
+  },
+  "gender": {
+    "probable": "Sexe probable:",
+    "assert": "Probable affirmer son sexe:",
+    "amount": "Recherche de montant:"
+  }
+}
