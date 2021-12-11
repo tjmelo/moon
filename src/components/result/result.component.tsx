@@ -28,7 +28,7 @@ export const Result: React.FC<ITypes> = ({ types }) => {
           <span className={style.resultCount}>&nbsp;{types?.count}</span>
         </p>
       </div>
-      <Avatar gender={types?.gender} />
+      <Avatar gender={types?.gender} name={types?.name} />
     </section>
   );
 };
