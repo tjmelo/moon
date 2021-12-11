@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./result.module.styl";
 import { useTranslation } from "react-i18next";
+import Avatar from "../avatar";
 
 declare interface ITypes {
   types: object | object;
@@ -29,9 +30,7 @@ export const Result: React.FC<ITypes> = ({ types }) => {
           <span className={style.resultCount}>&nbsp;{types?.count}</span>
         </p>
       </div>
-      <figure>
-        <img className="result resultAvatar" src="" alt="" />
-      </figure>
+      <Avatar gender={types?.gender} name={types?.name} />
     </section>
   );
 };
