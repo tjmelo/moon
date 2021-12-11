@@ -1,5 +1,5 @@
 name: Tasks TMX Moon runner
-on: [push, pull_request]
+on: [push]
 jobs:
     TMX-Moon:
       runs-on: ubuntu-latest
