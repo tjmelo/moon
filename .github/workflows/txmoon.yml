@@ -9,18 +9,18 @@ on:
 jobs:
   TMX-Moon:
     runs-on: ubuntu-latest
-    steps: 
+    strategy:
+      matrix:
+        node: ["12", "14", "16"]
+    steps:
       - run: echo "The process triggered ${{github.event_name}}"
       - run: echo "Server Github Host ${{runner.os}}"
       - name: Check out repository code
         uses: actions/checkout@v2
-          with:
-            node-version: '12'
-            node-version: '14'
-            cache: 'npm'
+        with:
+          node-version: ${{ matrix.node }}
       - run: npm install
       - run: echo "Repository cloned ${{github.repository}}"
       - name: Quality process
       - run: npm run lint
       - run: echo "Status service ${{job.status}}"
-    
