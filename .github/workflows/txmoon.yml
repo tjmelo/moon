@@ -1,4 +1,4 @@
-name: Tasks TMX Mercury runner
+name: Tasks TMX Moon runner
 on: [push, pull_request]
 jobs:
     TMX-Moon:
