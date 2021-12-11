@@ -7,17 +7,17 @@ jobs:
     matrix:
       node: ["12", "14", "16"]
     steps:
-      - run: echo "The process triggered ${{ github.event_name }}."
-      - run: echo "Server Github Host ${{ runner.os }}."
+      - run: echo "The process triggered ${{ github.event_name }} event."
+      - run: echo "Server Github Host ${{ runner.os }} erver hosted by GitHub!."
       - run: echo "The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2
         with:
           node-version: ${{ matrix.node }}
       - run: npm install
-      - run: echo "Repository cloned ${{ github.repository }}."
+      - run: echo "Repository cloned ${{ github.repository }} repository has been cloned to the runner."
       - name: Quality process
-        run: |
-          ls ${{ github.workspace }}
       - run: npm run lint
+      - run: |
+          ls ${{ github.workspace }}
       - run: echo "Status service ${{ job.status }}."
