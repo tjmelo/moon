@@ -1,0 +1,26 @@
+name: Task for TMX Moon CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  TMX-Moon:
+    runs-on: ubuntu-latest
+    steps: 
+      - run: echo "The process triggered ${{github.event_name}}"
+      - run: echo "Server Github Host ${{runner.os}}"
+      - name: Check out repository code
+        uses: actions/checkout@v2
+          with:
+            node-version: '12'
+            node-version: '14'
+            cache: 'npm'
+      - run: npm install
+      - run: echo "Repository cloned ${{github.repository}}"
+      - name: Quality process
+      - run: npm run lint
+      - run: echo "Status service ${{job.status}}"
+    
