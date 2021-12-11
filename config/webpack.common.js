@@ -1,8 +1,6 @@
-const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 
 const tmxMoon = {
-  mode: "development",
   module: {
     rules: [
       {
@@ -20,7 +18,7 @@ const tmxMoon = {
               "@babel/preset-react",
               "@babel/preset-typescript",
             ],
-            "plugins": ["@babel/plugin-transform-runtime"]
+            plugins: ["@babel/plugin-transform-runtime"],
           },
         },
       },
@@ -28,19 +26,11 @@ const tmxMoon = {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
           },
         ],
       },
     ],
-  },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, "public"),
-    },
-    compress: true,
-    port: process.env.PORT || 3005,
-    hot: true,
   },
   resolve: {
     extensions: ["", ".js", ".jsx", ".tsx", ".ts"],
