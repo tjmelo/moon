@@ -15,10 +15,10 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm install
-      - run: echo "Repository cloned ${{github.repository}}."
+      - run: echo "Repository cloned ${{ github.repository }}."
       - name: Quality process
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
       - run: npm run lint
-      - run: echo "Status service ${{job.status}}."
+      - run: echo "Status service ${{ job.status }}."
