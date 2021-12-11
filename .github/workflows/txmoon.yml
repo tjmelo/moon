@@ -1,12 +1,6 @@
 name: Task for TMX Moon CI
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-jobs:
+on: [push, pull_request]
+
   TMX-Moon:
     runs-on: ubuntu-latest
     steps:
