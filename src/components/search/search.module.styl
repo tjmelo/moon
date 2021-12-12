@@ -12,14 +12,14 @@ form
 
 input
     width 70%
+    height 5rem
     padding .3em 1em
     border none
-    font-size 1.5vw
+    font-size 1rem
     font-family 'Roboto Slab', serif
     font-weight 800
     &::placeholder
-        font-weight 400
-    
+        font-weight 400    
 
 button
     width 25%;
@@ -27,5 +27,14 @@ button
     border none
     background #58555A
     color #FBF37C
-    font-size 1.5vw
+    font-size 1rem
     cursor pointer
+
+@media(max-width: 28.75rem)
+    form
+        flex-flow column wrap
+    input,
+    button
+        width 100% 
+    button
+        height: 5rem
