@@ -37,7 +37,7 @@ const tmxMoon = {
   },
   plugins: [
     new htmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./public/index.html",
       filename: "index.html",
     }),
   ],
