@@ -1,0 +1,9 @@
+services:
+  tmx-moon:
+    container_name: ${PROJECT_NAME:-tmx-moon}-c
+    build: .
+    image: ${PROJECT_NAME:-tmx-moon}
+    ports:
+      - 3000:3005
+    volumes:
+      - .:/${PROJECT_NAME:-tmx-moon}
