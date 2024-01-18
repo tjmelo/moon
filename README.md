@@ -9,7 +9,7 @@
 - [Preview Screens](#preview-screens)
 - [Project details](#project-details)
     - [Simple Develop Process](#simple-develop-process)
-    - [Docker develop process](#docker-develop-process)
+    - [Docker develop Process](#docker-develop-process)
 - [View project at live](#view-project-at-live)
 
 
