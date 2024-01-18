@@ -19,7 +19,7 @@ jobs:
       - run: npm run lint
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: Docker containerization
-      - run: docker compose up 
+      - run: docker compose up -d
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
