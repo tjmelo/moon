@@ -1,37 +1,76 @@
 ![project](https://img.shields.io/badge/project-TMX%20Moon-blue)
 
 # Probability gender and name research
+![Size](https://img.shields.io/github/repo-size/tjmelo/tmx-moon) ![Version](https://img.shields.io/github/package-json/v/tjmelo/tmx-moon) ![Release](https://img.shields.io/github/v/release/tjmelo/tmx-moon) ![Last Commit](https://img.shields.io/github/last-commit/tjmelo/tmx-moon/main)
 
----
+## Table of content
 
-![action](https://img.shields.io/github/workflow/status/tjmelo/tmx-moon/Tasks%20TMX%20Moon%20runner/main) ![Size](https://img.shields.io/github/repo-size/tjmelo/tmx-moon) ![Version](https://img.shields.io/github/package-json/v/tjmelo/tmx-moon) ![Release](https://img.shields.io/github/v/release/tjmelo/tmx-moon) ![Last Commit](https://img.shields.io/github/last-commit/tjmelo/tmx-moon/main)
+- [About app](#about-app)
+- [Preview Screens](#preview-screens)
+- [Project details](#project-details)
+    - [Simple Develop Process](#simple-develop-process)
+    - [Docker develop Process](#docker-develop-process)
+- [View project at live](#view-project-at-live)
 
-This project is about the probability gender and name to consist at show probability of compatibility a name be of a determined equity gender with the support and amount research. :fire:
 
----
+## About app
 
-**Project details:**
+This project is about interact with the probability gender and name by consist at show probability of compatibility a name be of a determined equity gender with the support and amount research. :fire:
 
-<details>
-<summary>Used Skills</summary>
-<p>This project use technologies as well:</p>
-<code>HTML</code> <br />
-<code>CSS (Library Stylus)</code> <br />
-<code>Java Script</code> <br />
-<code>Typescript (Library type check)</code>
-</details>
 
-<details>
-<summary>Develop Process</summary>
-<p>For download and develop process:</p>
-After download, run <code>npm install</code> to update project libs<br />
-For start development, run <code>npm start</code> <br />
-For check lint structure code, run <code>npm run lint</code>
-</details>
+## Preview Screens
+Type some name
+![Screen1](/public/screen-1.jpeg)
 
----
+Found a probable name and gender 
+![Scree2](/public/screen-2.jpeg)
 
-View project:
+## Project details
+
+
+### Used Skills
+This project use technologies as well:
+- CSS (Library Stylus)
+- Docker
+- HTML
+- Java Script
+- Lint for quality
+- Typescript (Library type check)
+- Webpack
+
+### Simple Develop Process
+For download and develop process:
+
+Fork or clone this repository
+```sh
+git clone https://github.com/tjmelo/tmx-moon.git
+
+cd tmx-moon
+
+git checkout -b develop
+
+npm install && npm start
+```
+
+
+### Docker develop process
+
+With Docker, follow this instructions:
+```sh
+git clone https://github.com/tjmelo/tmx-moon.git
+
+cd tmx-moon
+
+docker compose up -d
+```
+Open the app on a browser `http://localhost:3000`
+
+For check quality of code in both process, run:
+```sh
+npm run lint
+```
+
+## View project at live:
 
 :boat: **[TMX Moon](https://tjmelo.github.io/tmx-moon/)**
 
