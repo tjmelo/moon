@@ -22,7 +22,7 @@ This project is about interact with the probability gender and name by consist a
 Type some name
 ![Screen1](/public/screen-1.jpeg)
 
-Found a problable name and gender 
+Found a probable name and gender 
 ![Scree2](/public/screen-2.jpeg)
 
 ## Project details
