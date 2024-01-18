@@ -62,6 +62,8 @@ cd tmx-moon
 
 docker compose up -d
 ```
+Open the app on a browser `http://localhost:3000`
+
 For check quality of code in both process, run:
 ```sh
 npm run lint
