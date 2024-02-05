@@ -16,7 +16,7 @@ jobs:
         run: |
           echo "done!"
 
-      - uses: "tjmelo/${{ github.repository }}@latest"
+      - uses: "tjmelo/tmx-moon@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
