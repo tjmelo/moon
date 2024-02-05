@@ -1,6 +1,6 @@
 {
   "name": "tmx-moon",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "The project about probability gender and name it consist show probability of compatibility a name be determined  equity gender with the support and amount research.",
   "main": "index.js",
   "dependencies": {
