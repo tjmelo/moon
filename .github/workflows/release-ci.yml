@@ -6,22 +6,17 @@ on:
     tags:
       - "v*"
 
-env:
-  USERNAME: ${{ github.actor }}
-  REPOSITORY: ${{ github.repository }}
-
 jobs:
   tagged-release:
     name: "Tagged Release"
     runs-on: "ubuntu-latest"
 
     steps:
-      # ...
       - name: "Build & test"
         run: |
           echo "done!"
 
-      - uses: "${{ env.USERNAME }}/${{ env.REPOSITORY }}@latest"
+      - uses: "${{ github.actor }}/${{ github.repository }}@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
