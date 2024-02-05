@@ -63,6 +63,18 @@ cd tmx-moon
 
 docker compose up -d
 ```
+#### Docker Github
+
+```
+docker pull ghcr.io/tjmelo/tmx-moon:latest
+```
+#### Docker Hub
+
+```
+docker pull tmwd/tmx-moon
+```
+
+
 Open the app on a browser `http://localhost:3000`
 
 For check quality of code in both process, run:
