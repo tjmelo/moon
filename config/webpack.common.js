@@ -1,4 +1,6 @@
 const htmlWebpackPlugin = require("html-webpack-plugin");
+const { ModuleFederationPlugin } = require("webpack").container;
+const dependencies = require('../package.json')
 
 const tmxMoon = {
   module: {
@@ -39,6 +41,23 @@ const tmxMoon = {
     new htmlWebpackPlugin({
       template: "./public/index.html",
       filename: "index.html",
+    }),
+    new ModuleFederationPlugin({
+      name: "TmxMoon",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./TmxMoon": "./src/App",
+      },
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: dependencies.react
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: dependencies["react-dom"] 
+        },
+      },
     }),
   ],
 };
