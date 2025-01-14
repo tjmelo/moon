@@ -14,10 +14,10 @@ WORKDIR /$TMX_PATH
 
 COPY package.json .
 
-RUN npm i
+RUN yarn install
 
 COPY . .
 
 EXPOSE 3005
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
