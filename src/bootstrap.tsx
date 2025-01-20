@@ -11,10 +11,7 @@ if (container) {
   const event = new CustomEvent("shadowroot-created");
   container.dispatchEvent(event);
 
-  const shadowContainer = document.createElement("div");
-  shadowRoot.appendChild(shadowContainer);
-
-  const root = createRoot(shadowContainer);
+  const root = createRoot(shadowRoot);
   root.render(<App />);
 } else {
   console.error("Failed to find the app container");
