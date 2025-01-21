@@ -14,7 +14,7 @@ WORKDIR /$TMX_PATH
 
 COPY package.json .
 
-RUN yarn i
+RUN yarn install
 
 COPY . .
 
