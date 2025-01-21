@@ -16,7 +16,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: yarn install
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: yarn run lint
+      - run: yarn lint
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: Docker containerization
         run: docker compose up -d
