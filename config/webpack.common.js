@@ -11,19 +11,7 @@ const tmxMoon = {
           loader: "style-loader",
           options: {
             injectType: "singletonStyleTag",
-            insert: (element) => {
-                const container = document.querySelector("#app") || document.head;
-
-                if (container.shadowRoot) {
-                  container.shadowRoot.appendChild(element);
-                } else {
-                  container.addEventListener("shadowroot-created", () => {
-                    if (container.shadowRoot) {
-                      container.shadowRoot.appendChild(element);
-                    }
-                  });
-                }
-              },
+            insert: require.resolve("../src/utils.ts"),
           },
         }, "css-loader", "stylus-loader"],
       },
@@ -64,7 +52,7 @@ const tmxMoon = {
       name: "TmxMoon",
       filename: "remoteEntry.js",
       exposes: {
-        "./TmxMoon": "./src/bootstrap",
+        "./TmxMoon": "./src/App",
       },
       shared: {
         react: {
